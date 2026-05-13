@@ -19,6 +19,10 @@ app.get('/', (req, res) => {
     res.render('index', { qrCodeData: null, error: null, text: '' });
 });
 
+app.get('/health', (req, res) => {
+    res.status(200).json({ status: 'ok' });
+});
+
 app.post('/generate', async (req, res) => {
     const text = req.body.text;
 
